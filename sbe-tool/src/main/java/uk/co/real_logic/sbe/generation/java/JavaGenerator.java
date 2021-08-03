@@ -354,9 +354,7 @@ public class JavaGenerator implements CodeGenerator
         final Token numInGroupToken = Generators.findFirst("numInGroup", tokens, index);
 
         final PrimitiveType blockLengthType = blockLengthToken.encoding().primitiveType();
-        final String blockLengthOffset = "limit + " + blockLengthToken.offset();
-        final String blockLengthGet = generateGet(
-            blockLengthType, blockLengthOffset, byteOrderString(blockLengthToken.encoding()));
+        final String blockLengthGet = "sbeBlockLength()";
 
         final PrimitiveType numInGroupType = numInGroupToken.encoding().primitiveType();
         final String numInGroupOffset = "limit + " + numInGroupToken.offset();
